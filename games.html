@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Kayle Heideman</title>
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- Table of Contents | https://afeld.github.io/bootstrap-toc/ -->
+	<link rel="stylesheet" href="style/toc.css"/>
+	
+	<!-- Mobile compatibility -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<style>
+		.enlarged {
+			width: 102.5% !important; 
+			height: 102.5% !important; 
+			margin-left: -7.5% !important; 
+			
+		}
+		
+		nav[data-toggle="toc"] {
+		  top: 42px;
+		}
+
+		/* small screens */
+		@media (max-width: 768px) {
+		  nav[data-toggle="toc"] {
+			margin-bottom: 42px;
+			position: static;
+		  }
+
+		  
+		  
+		  nav[data-toggle="toc"] .nav-link .active {
+			display: block;
+		  }
+		  
+		  nav[data-toggle="toc"] .nav-link {
+			  display: none;
+			  padding-bottom: 10px;
+		  }
+		  nav[data-toggle="toc"] .nav > li > a {
+			  display: block;
+			  padding: 4px 20px;
+			  font-size: 13px;
+			  font-weight: 500;
+			  color: #767676;
+			}
+		
+	</style>
+  </head>
+
+  <body style="font-family: Arial, verdona, trebuchet ms, times new roman georgia">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-secondary mb-5"><a class="navbar-brand" href="#"><strong>Kayle Heideman</strong></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto navbar-right">
+		  
+		  <li class="nav-item">
+			<a class="nav-link" tabindex="-1" href="index.html">About me</a>
+		  </li>
+		  
+		  <li class="nav-item">
+			<a class="nav-link" href="resume.html">Resume</a>
+		  </li>
+		  
+		  <li class="nav-item active">
+			<a class="nav-link active" href="#">Games<span class="sr-only">(current)</span></a>
+		  </li>
+		</ul>
+	</div>
+  </nav>
+  <!-- /Navigation bar -->
+  
+	<div class="container">
+		<div class="row">
+			<!-- TOC -->
+			<div class="col-sm-2">
+				<nav id="toc" class="sticky-top"></nav>
+			</div>
+			<!-- /TOC -->
+	  
+	  
+			<!-- main content area -->
+			<div class="col-sm-8">
+			
+			<div class="container pb-3 pt-3"> <!-- Game/System Design -->
+				<h1>Game/System Design</h1>
+				<div class="container ml-5"> <!-- Ancient Artifacts -->
+					<h2>Ancient Artifacts</h2>
+					<p class="text-secondary">
+						This 2-4 player game sees scientists competing over the acquisition of valuable artifacts while
+						simultaneously battling against a doomsday count down. Clear obstacles and overcome hazards to reach
+						the artifacts that will help the scientists in future acquisition or in hindering the other players. 20-40
+						minute play time.
+					</p>
+					<p>
+						Ancient Artifacts is a game about paleontologists and archeologists racing to uncover relics and artifacts as the 
+						Doomsday clock encroaches. The primary focuses for game design were player progression, inter-player interaction, 
+						and promoting risk-taking behavior. 
+						<br><br>
+						This game was developed over a 4 month window with iteration and feedback present along the way.
+						<br><br>
+						<a href="artifacts.html" class="text-primary" target="_blank">Design Document</a> (7 pages)
+					</p>
+					
+					
+					<div id="artifactCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+					  <div class="carousel-inner">
+						<div class="carousel-item active"> <!-- Game Board --> 
+						  <img src="assets/artifacts/board.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">Ancient Artifacts board</p>
+						  </div>
+						</div>
+						<div class="carousel-item"> <!-- Game Playing --> 
+						  <img src="assets/artifacts/midplay.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">Ancient Artifacts mid-game</p>
+						  </div>
+						</div>
+						<div class="carousel-item"> <!-- Celebrity Character --> 
+						  <img src="assets/artifacts/celebrity.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">Celebrity player character</p>
+						  </div>
+						</div>
+					  </div>
+					  <a class="carousel-control-prev" href="#artifactCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#artifactCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					  </a>
+					</div>
+					
+					
+					
+				</div>
+				<hr>
+				<div class="container ml-5"> <!-- Politics in a Nutshell -->
+					<h2 class="pb-0 mb-0">Politics in a Nutshell</h2>
+					<p class="pt-0 mt-0 text-secondary font-italic">Constraints: 4 hour time limit, game jam, serious game</p>
+					<p class="text-secondary">
+						This three-player game has players assuming the roles of political parties that wish to get even a single
+						issue into policy. Players must fight against or persuade the public’s opinion (as represented by the
+						Overton window) in order to move their issue up in the political window until it becomes policy – while
+						ideally not allowing others to do the same. Further, each party has an issue that their constituents
+						REALLY do not want as Policy. ~15 minutes of play per rounds.
+					</p>
+					<p>
+						 Politics in a Nutshell is a serious game that is meant to make players critically think about how politics influences the public 
+						 and vice-versa. Without committing to any political opinions, the game challenges players to put themselves in the shoes of a politician 
+						 with three goals: move an idea into policy, stop an opposing idea from moving into policy, and be the first to accomplish these tasks.
+						 <br><br>
+						 Players must earn political favor to stay in office, utilize money to shift policy, and try to influence the Overton Window 
+						 to bring voters to their side. From a game design perspective, the game attempts to use the Three-Player Problem (wherein the two players
+						 who are behind will antagonize the leader) as an intended feature. 
+						 <br><br>
+						 <a href="politics.html" class="text-primary" target="_blank">Design Document</a> (4 pages)
+					</p>
+					
+					<div class="row justify-content-center" align="center">
+						<div class="col"> <!-- Game Start -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/politics/game_start.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Game Start</p>
+								</div>
+							</div>
+						</div>
+						<div class="col"> <!-- Game End -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/politics/game_end.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Game End</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<hr>
+				<div class="container ml-5"> <!-- Pokemon Damage Calculator -->
+					<h2 class="pb-0 mb-0">Pokemon Damage Calculator (Systems Design)</h2>
+					<p>
+						 This spreadsheet shows my ability to implement complex systems into a tool that can be used for game designers 
+						 to balance and test values against one another. Custom moves, types, Pokemon and weather are all modifiable from 
+						 the useability-first sheet.
+						 <br><br>
+						 <a href="https://docs.google.com/spreadsheets/d/1r24qSL5NXYViSVhlWmVPxYsbDkmpRYyAfdoapPwRCEI/edit?usp=sharing" class="text-primary" target="_blank">Google Sheets link</a> (7 sheets)
+					</p>
+					
+					<div class="row justify-content-center" align="center">
+						<div class="col"> <!-- High Level -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/pokemon/high-level.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Example 1</p>
+								</div>
+							</div>
+						</div>
+						<div class="col"> <!-- Similar Level -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/pokemon/similar-level.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Example 2</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		
+			<hr>
+			
+			<div class="container pb-3 pt-3"> <!-- Gameplay Programming -->
+				<h1>Gameplay Programming</h1>
+				<div class="container ml-5"> <!-- GOAP AI -->
+					<h2 class="pb-0 mb-0">Goal Oriented Action Planning - Unity Game</h2>
+					<p>
+						This is my implementation of <a href="https://alumni.media.mit.edu/~jorkin/goap.html"  class="text-primary" target="_blank">Goal-Oriented Action Planning</a>, 
+						with a small game to go alongside it. There are two types of AI in the game, creatures and humans. Both need to eat and drink to survive, but humans can 
+						build structures and chop trees, whereas creatures can nap and poop.
+						<br><br>
+						The game itself is a small god game, where the player does not interact directly with the AI, rather they influence their actions in vague ways.
+						Players can place additional creatures, humans, trees and water canisters to change the environment and see how AI behaves.
+						<br><br>
+						<a href="https://github.com/KBheid/GOAP_AI" class="text-primary" target="_blank">Github Link</a>
+						<br>
+						<a href="https://github.com/KBheid/GOAP_AI/blob/main/Assets/ActionPlanner.cs" class="text-primary" target="_blank">Action Planner Direct Link</a>
+						
+					</p>
+					
+					<div class="row justify-content-center" align="center">
+						<div class="col"> <!-- High Level -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/goap/goap.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">The game world after humans have created some structures. A creature can be seen napping in a tent
+									and humans chopping trees.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<hr>
+				<div class="container ml-5"> <!-- Spell Creator -->
+					<h2 class="pb-0 mb-0">Spell Creator</h2>
+					<p>
+						The Spell Creator is a player system that I developed roughly based on Morrowind's custom spells. I wanted to demonstrate 
+						a new take on the system that allows for customized movement of spells, with support for basic spell effects (such as electric damage). 
+						In order to make implementing new spells simpler, I utilized the subclass sandbox pattern. The prototype pattern(ish) was also conceptually useful here, 
+						as it allows for simpler copying of a spell. This is used, for example, when splitting a spell into 3, but wanting to retain the effects that follow in the builder 
+						for each new spell.
+						<br><br>
+						<a href="https://github.com/KBheid/SimpleSpellSystem" class="text-primary" target="_blank">Github Link</a>
+						
+					</p>
+					
+					<div class="row justify-content-center" align="center">
+						<div class="col"> <!-- Spell UI -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/customspell/custom_spell_ui.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">Spell creator UI. (I'm no artist...)</p>
+								</div>
+							</div>
+						</div>
+						<div class="col"> <!-- Spell Cast -->
+							<div class="card hoverenlarge" style="width: 18rem;">
+								<img src="assets/customspell/cast_spell_example.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<p class="card-text">An example custom spell that was cast and has left the play field.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		
+			<hr>
+			
+			<div class="container pb-3 pt-3">
+				<h1>Engine Programming/General CS</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat urna eleifend, posuere dolor id, tempus lectus. Nunc consequat urna vitae turpis posuere, ut bibendum tellus consectetur. Proin viverra, risus sed ornare tempor, enim tellus laoreet neque, tincidunt rutrum nulla enim non magna. In luctus, orci sit amet condimentum facilisis, augue justo semper nisl, vitae ultrices nulla libero vitae dolor. Nam ut dapibus tortor. Integer hendrerit interdum lectus, sed tincidunt urna accumsan ut. Aliquam erat volutpat. Integer velit sem, facilisis id vulputate a, pellentesque id urna. Integer vulputate vehicula tortor, et viverra sapien congue at. Suspendisse eu arcu sed risus dictum scelerisque. Integer ut dolor non sem vehicula porttitor. Nam viverra metus at eros sagittis interdum. In at nibh sit amet mi faucibus fermentum. Pellentesque porta nibh eu vehicula finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+
+					Proin vehicula scelerisque diam bibendum laoreet. Pellentesque urna libero, maximus ut sapien ut, volutpat ultrices arcu. Morbi et enim ac massa ullamcorper sagittis. Mauris id sapien ut nisi ultricies tempus. Aenean interdum libero quis convallis commodo. Aenean ut quam eget neque dictum tempus sed eget enim. Vivamus bibendum, ipsum quis fringilla semper, odio nisi dapibus lacus, ut ornare quam eros quis lacus. Sed accumsan sapien et est ultrices lobortis. Praesent congue tellus vel arcu consectetur faucibus. Curabitur vel interdum neque, ut elementum arcu. Donec varius purus a pharetra ultrices. Etiam quis velit purus. Pellentesque varius mollis maximus. Fusce in imperdiet erat.
+
+					Nulla finibus erat ante, et tincidunt velit viverra ac. Cras molestie, nulla id euismod pharetra, metus ex dictum nisl, dignissim tincidunt erat metus at diam. Duis feugiat massa sed eros consequat, nec elementum metus cursus. Duis sed tellus elit. Nulla eget arcu urna. Donec pretium velit ex, et tincidunt odio efficitur ac. Maecenas tempus sed ex vitae malesuada. Vestibulum sit amet consectetur elit. Morbi in dignissim leo. Sed dignissim, sapien et pretium vehicula, nulla nunc vestibulum lacus, sit amet cursus sem orci eget magna. Duis eu ultricies erat. Vestibulum facilisis nunc dolor, eget pretium massa eleifend vitae. Fusce ac mattis risus. Sed rutrum aliquam cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+					Morbi hendrerit lectus at diam maximus placerat. Integer ut turpis magna. Praesent dapibus tincidunt lacus, sed blandit mauris tempor at. Nam quis vestibulum turpis. Morbi malesuada id erat in commodo. Nullam mollis sit amet diam eu dignissim. Nullam vel sapien et justo condimentum molestie. Morbi quis fermentum metus. Donec ut volutpat ante. Praesent mauris metus, bibendum id orci et, tristique lacinia libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. In et magna mauris.
+
+					Curabitur non dapibus diam, vel rutrum felis. Pellentesque nec tempus nibh, eu accumsan diam. Mauris vel odio sit amet urna placerat porttitor. Fusce viverra velit ut lectus rhoncus, molestie porta lacus laoreet. Etiam lacus leo, convallis ut ligula sed, maximus pharetra nunc. Vivamus lacinia lacus ligula, eu accumsan elit mattis auctor. Aliquam dictum consequat risus sit amet suscipit. Etiam posuere neque nec lacus congue maximus. Quisque commodo rhoncus nulla, eu placerat sapien sollicitudin ac. Donec non condimentum dolor. Pellentesque eget massa elit. Donec sit amet dignissim justo, sit amet dapibus erat. Cras bibendum mollis augue sed imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum ultrices semper. 
+				</p>
+				<h2>Test stuff 4</h2>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+  
+  
+	
+	
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- Table of Contents -->
+	<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+	
+	<script>
+		$('.hoverenlarge').hover(function(){
+			$(this).toggleClass("enlarged");
+		},function(){
+			$(this).toggleClass("enlarged");
+		});
+		
+		$(function () {
+		  var navSelector = "#toc";
+		  var $myNav = $(navSelector);
+		  Toc.init($myNav);
+		  $("body").scrollspy({
+			target: navSelector,
+		  });
+		});
+	</script>
+  </body>
+</html>
