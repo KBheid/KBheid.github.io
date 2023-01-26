@@ -10,6 +10,9 @@
 	<!-- Table of Contents | https://afeld.github.io/bootstrap-toc/ -->
 	<link rel="stylesheet" href="style/toc.css"/>
 	
+	<!-- Syntax Highlighter -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+	
 	<!-- Mobile compatibility -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -326,23 +329,670 @@
 		
 			<hr>
 			
-			<div class="container pb-3 pt-3">
+			<div class="container pb-3 pt-3"> <!-- Engine Programming/General CS -->
 				<h1>Engine Programming/General CS</h1>
+				<div class="container ml-5">  <!-- SPE -->
+				<h2 class="pb-0 mb-0">Stream Processing Engine</h2>
+				<p class="pt-0 mt-0 text-secondary font-italic">Research Project - C++</p>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat urna eleifend, posuere dolor id, tempus lectus. Nunc consequat urna vitae turpis posuere, ut bibendum tellus consectetur. Proin viverra, risus sed ornare tempor, enim tellus laoreet neque, tincidunt rutrum nulla enim non magna. In luctus, orci sit amet condimentum facilisis, augue justo semper nisl, vitae ultrices nulla libero vitae dolor. Nam ut dapibus tortor. Integer hendrerit interdum lectus, sed tincidunt urna accumsan ut. Aliquam erat volutpat. Integer velit sem, facilisis id vulputate a, pellentesque id urna. Integer vulputate vehicula tortor, et viverra sapien congue at. Suspendisse eu arcu sed risus dictum scelerisque. Integer ut dolor non sem vehicula porttitor. Nam viverra metus at eros sagittis interdum. In at nibh sit amet mi faucibus fermentum. Pellentesque porta nibh eu vehicula finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-
-					Proin vehicula scelerisque diam bibendum laoreet. Pellentesque urna libero, maximus ut sapien ut, volutpat ultrices arcu. Morbi et enim ac massa ullamcorper sagittis. Mauris id sapien ut nisi ultricies tempus. Aenean interdum libero quis convallis commodo. Aenean ut quam eget neque dictum tempus sed eget enim. Vivamus bibendum, ipsum quis fringilla semper, odio nisi dapibus lacus, ut ornare quam eros quis lacus. Sed accumsan sapien et est ultrices lobortis. Praesent congue tellus vel arcu consectetur faucibus. Curabitur vel interdum neque, ut elementum arcu. Donec varius purus a pharetra ultrices. Etiam quis velit purus. Pellentesque varius mollis maximus. Fusce in imperdiet erat.
-
-					Nulla finibus erat ante, et tincidunt velit viverra ac. Cras molestie, nulla id euismod pharetra, metus ex dictum nisl, dignissim tincidunt erat metus at diam. Duis feugiat massa sed eros consequat, nec elementum metus cursus. Duis sed tellus elit. Nulla eget arcu urna. Donec pretium velit ex, et tincidunt odio efficitur ac. Maecenas tempus sed ex vitae malesuada. Vestibulum sit amet consectetur elit. Morbi in dignissim leo. Sed dignissim, sapien et pretium vehicula, nulla nunc vestibulum lacus, sit amet cursus sem orci eget magna. Duis eu ultricies erat. Vestibulum facilisis nunc dolor, eget pretium massa eleifend vitae. Fusce ac mattis risus. Sed rutrum aliquam cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-					Morbi hendrerit lectus at diam maximus placerat. Integer ut turpis magna. Praesent dapibus tincidunt lacus, sed blandit mauris tempor at. Nam quis vestibulum turpis. Morbi malesuada id erat in commodo. Nullam mollis sit amet diam eu dignissim. Nullam vel sapien et justo condimentum molestie. Morbi quis fermentum metus. Donec ut volutpat ante. Praesent mauris metus, bibendum id orci et, tristique lacinia libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. In et magna mauris.
-
-					Curabitur non dapibus diam, vel rutrum felis. Pellentesque nec tempus nibh, eu accumsan diam. Mauris vel odio sit amet urna placerat porttitor. Fusce viverra velit ut lectus rhoncus, molestie porta lacus laoreet. Etiam lacus leo, convallis ut ligula sed, maximus pharetra nunc. Vivamus lacinia lacus ligula, eu accumsan elit mattis auctor. Aliquam dictum consequat risus sit amet suscipit. Etiam posuere neque nec lacus congue maximus. Quisque commodo rhoncus nulla, eu placerat sapien sollicitudin ac. Donec non condimentum dolor. Pellentesque eget massa elit. Donec sit amet dignissim justo, sit amet dapibus erat. Cras bibendum mollis augue sed imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum ultrices semper. 
+				The Stream Processing Engine was a project that myself and 6 other students undertook during a research class. The engine is designed to take an endless stream of data, allow operators to 'do work' on them, then 
+				provide an end point for said data. One application that we utilized the engine for was modifying live camera data to apply filters or distortion effects. Users first set up input streams (of arbitrary
+				data type), then define operators that work on the data, which then pass potentially modified data to the next operator. Finally, an end point can be defined that allow users to work with the output of the engine 
+				in manageable sizes.One of my personal contributions on this project was to implement a sliding window, which allows users to group data points together, allowing for aggregation and other multi-value operations. 
+				<br><br>
+				The following code is an example usage of the Stream Processing Engine with Minecraft being an input and output point for the engine. The code below reads in Minecraft chunk data, depending on the player's current 
+				region (16x16 chunks). Then, it forwards chunk data to an operator that finds the 'best' chunk for the player to be in, based on the number of diamonds found utilizing an aggregator operator. Finally, the chunk location 
+				and diamond locations are forwarded to another operator, which send the data back via TCP connection. My contribution on this demo of the engine also includes work in Python and Java, parsing the world data of 
+				Minecraft to send to the engine and receiving the coordinates in game.
+				<br><br>
+				<a href="https://github.com/nathan-backman/cmsc491-SPE" class="text-primary" target="_blank">Github Repo</a>
 				</p>
-				<h2>Test stuff 4</h2>
+				<button id="spereveal" class="btn btn-info" data-toggle="collapse" data-target="specode">Toggle Code</button>
+				<div id="specode" class="collapse">
+				<pre class='brush: cpp'><code class="language-cpp">
+// Copyright 2019 [BVU CMSC491 class]
+#include &ltiostream&gt
+#include &ltfstream&gt
+#include &ltsstream&gt
+#include &ltstring&gt
+#include &ltvector&gt
+#include &ltcmath&gt
+#include "SPE.h"
+#include "TCPListener.h"
+#include "MinecraftRegionLoader.h"
+
+
+TCPListener listener;
+
+struct aggData {
+  float chunkVal;
+  pos chunkID;
+  std::vector&ltpos&gt* oreLocations;
+} typedef aggData;
+
+
+float calcDistance(pos playerPos, pos chunkPos) {
+  float x = pow(playerPos.x - chunkPos.x, 2);
+  float y = pow(playerPos.y - chunkPos.y, 2);
+  float z = pow(playerPos.z - chunkPos.z, 2);
+  float dist = sqrt(x+y+z);
+  return dist;
+}
+
+
+pos getBlockPos(int i, pos globalChunkPos) {
+  //i = y*16*16 + z*16 + x
+  pos p;
+  int relx, rely, relz, diff;
+
+  rely = i/256;
+  diff = i-(rely*256);
+  relx = diff % 16;
+  relz = (diff - relx)/16;
+
+  p.y = rely + globalChunkPos.y;
+  p.z = relz + globalChunkPos.z;
+  p.x = relx + globalChunkPos.x;
+
+  return p;
+}
+
+
+class ChunkSelect : public Operator {
+  public:
+    ChunkSelect(int r, int s) : Operator(r, s) {}
+    void processData(Data data) {
+      std::cout &lt&lt "chunk select recv one data" &lt&lt std::endl;
+      emit(Data(&data, sizeof(aggData)));
+      std::cout &lt&lt "chunk select emit data" &lt&lt std::endl;
+    }
+
+    void processData() {
+      std::cout &lt&lt "chunk select recv data" &lt&lt std::endl;
+      aggData bestAgg;
+      bestAgg.chunkVal = -1;
+      for (Data d : window) {
+        if(bestAgg.chunkVal == -1 || bestAgg.chunkVal &lt (*(aggData*)d.value).chunkVal ) {
+          if(bestAgg.chunkVal != -1) {
+            delete bestAgg.oreLocations;
+          }
+          bestAgg = *(aggData*)(d.value);
+        }
+        else {
+          delete (*(aggData*)d.value).oreLocations;
+        }
+      }
+
+      std::cout &lt&lt "chunk select emit data" &lt&lt std::endl;
+      emit(Data(&bestAgg, sizeof(aggData)));
+    }
+};
+
+
+class ChunkProcessor : public Operator {
+  public:
+    void processData(Data data) {
+      //std::cout &lt&lt "chunk procesessor recv data" &lt&lt std::endl;
+      ChunkData &chunk = *(ChunkData*)data.value;
+
+      // Handle an empty chunk
+      if (chunk.empty == true) {
+        aggData dataToPass;
+        dataToPass.oreLocations = new std::vector&ltpos&gt;
+        dataToPass.chunkVal = 0;
+         
+        //std::cout &lt&lt "[empty] chunk procesessor emit data" &lt&lt std::endl;
+        emit(Data(&dataToPass, sizeof(aggData)));
+        return;
+      }
+
+      // Handle an non-empty chunk
+      float count = 0;
+      aggData dataToPass;
+      std::vector&ltpos&gt* oreLocations = new std::vector&ltpos&gt;
+      dataToPass.chunkID = chunk.globalChunkPos;
+
+      dataToPass.oreLocations = oreLocations;
+      for(int i = 0; i&lt65536 ; i++) {
+        if(chunk.chunk[i] == chunk.oreID){
+          count++;
+          oreLocations-&gtpush_back(getBlockPos(i, chunk.globalChunkPos));
+        }
+      }
+
+      dataToPass.chunkVal = count/calcDistance(chunk.playerPos, chunk.globalChunkPos);
+
+      //std::cout &lt&lt "[non-empty] chunk procesessor emit data with #ores:" &lt&lt oreLocations-&gtsize() &lt&lt std::endl;
+      emit(Data(&dataToPass, sizeof(aggData)));
+    }
+};
+
+
+class Generator : public InputSource {
+  void generateData() {
+
+    std::cout &lt&lt "Waiting for data from mod..." &lt&lt std::endl;
+
+    std::string strPos;
+    while ( (strPos = listener.GetLine()) != "") {
+      std::istringstream is(strPos);
+      pos playerPos;
+      is &gt&gt playerPos.x &gt&gt playerPos.y &gt&gt playerPos.z;
+      std::cout &lt&lt "Player pos at: " &lt&lt
+        playerPos.x &lt&lt " " &lt&lt
+        playerPos.y &lt&lt " " &lt&lt
+        playerPos.z &lt&lt std::endl;
+
+      //pos playerPos = {0,0,0};
+      MinecraftRegionLoader loader(playerPos);
+      std::vector&ltChunkData*&gt chunks = loader.extractChunkData();
+
+      for(int i=0; i &lt chunks.size(); i++) {
+        chunks[i]-&gtoreID = 26;
+        emit(Data(chunks[i], sizeof(ChunkData)));
+      }
+
+      std::cout &lt&lt "Produced " &lt&lt chunks.size() &lt&lt "chunks. Waiting for more data from mod..." &lt&lt std::endl;
+    }
+
+    std::cout &lt&lt "Minecraft Mod Disconnected" &lt&lt std::endl;
+  }
+};
+
+
+class PrintOp : public Operator{
+  public:
+    void processData(Data data){
+
+      //std::cout &lt&lt "chunk print recv data" &lt&lt std::endl;
+      aggData bestChunk = *(aggData*)data.value;
+      std::vector&ltpos&gt ores = *(bestChunk.oreLocations);
+      //std::cout &lt&lt "ores size: " &lt&lt ores.size() &lt&lt std::endl;
+      for(int i=0; i&ltores.size(); i++){
+       std::cout &lt&lt"Chunk: " &lt&lt bestChunk.chunkID.x &lt&lt " " &lt&lt bestChunk.chunkID.z &lt&lt " " &lt&lt bestChunk.chunkID.y &lt&lt std::endl;
+       std::cout &lt&lt"Desired Ore at pos: " &lt&lt std::endl;
+       std::cout &lt&lt "x: " &lt&lt ores[i].x &lt&lt std::endl;
+       std::cout &lt&lt "z: " &lt&lt ores[i].z &lt&lt std::endl;
+       std::cout &lt&lt "y: " &lt&lt ores[i].y &lt&lt std::endl;
+      }
+
+      if (ores.empty() == false) {
+        std::ostringstream os;
+        os &lt&lt "Get ore at " &lt&lt ores[0].x &lt&lt " " &lt&lt ores[0].y &lt&lt " " &lt&lt ores[0].z;
+        string msg = os.str();
+        uint8_t msgSz = msg.size();
+
+        listener.SendData((char*)&msgSz, sizeof(msgSz));
+        listener.SendData(msg.c_str(), msgSz);
+      }
+
+      delete bestChunk.oreLocations;
+    }
+};
+
+int main(int argc, char** argv) {
+  std::cout &lt&lt "SPE Starting up." &lt&lt std::endl;
+
+  int port = 12345;
+  listener.Bind(port);
+
+  std::cout &lt&lt "Waiting for connection..." &lt&lt std::endl;
+  if (listener.WaitForConnection() &lt= 0) {
+    std::cout &lt&lt "Error - failed to connect" &lt&lt std::endl;
+    return 0;
+  }
+
+  Generator inputSource;
+  ChunkProcessor op1;
+  ChunkSelect op2(1024, 1024);
+  PrintOp op3;
+
+  StreamProcessingEngine spe;
+
+  spe.addInputSource(&inputSource, {&op1});
+  spe.connectOperators(&op1, {&op2});
+  spe.connectOperators(&op2, {&op3});
+
+  spe.run();
+
+  std::cout &lt&lt "SPE Finished." &lt&lt std::endl;
+  return 0;
+}
+				</code></pre>
+				</div>
 			</div>
+				<hr>
+				<div class="container ml-5">  <!-- I.T.O.M. -->
+					<h2 class="pb-0 mb-0">Item Trading over an Online Marketplace</h2>
+					<p class="pt-0 mt-0 text-secondary font-italic">I.T.O.M. - Full Stack</p>
+					<p class="text-secondary font-italic">
+						Item Trading over an Online Marketplace is a full stack application that allows the trading of items between players regardless of the game 
+						the users play. This allows users to trade items between games such as Minecraft and Runescape - trading items from one game for items from another.
+					</p>
+					<p>
+						I.T.O.M. was my undergraduate capstone project that I worked on with one other student over the course of a semester. Together, we created a 
+						full stack application with custom protocols including a database with serialized game data for in game items. The original pitch included
+						two games: Minecraft and Runescape - due to unforseen scoping, this was reduced to only Minecraft. However, the system theoretically supports 
+						multiple games, with Runescape being partially implemented game-side utilizing an automated player that facilitates player trades.
+						<br><br>
+						Utilizing React for the frontend, Spring for the backend, and Postgres as our DBMS, the application was developed in HTML, Javascript, and Java with SQL calls 
+						for database interactions. Below are some sample images of the application in use and its architecture.				
+						<br><br>
+						<a href="https://github.com/KBheid/Itom-Frontend" class="text-primary" target="_blank">Frontend Repo</a> <br>
+						<a href="https://github.com/KBheid/Itom-Backend" class="text-primary" target="_blank">Backend Repo</a>
+					</p>
+					<br>
+					
+					<div id="itomCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+					  <div class="carousel-inner">
+						<div class="carousel-item active"> <!-- Watched Trades --> 
+						  <img src="assets/ITOM/watchedTrades.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">The watched trades page</p>
+						  </div>
+						</div>
+						<div class="carousel-item"> <!-- Verified Accounts --> 
+						  <img src="assets/ITOM/verifiedAccounts.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">The verified user accounts page</p>
+						  </div>
+						</div>
+						<div class="carousel-item"> <!-- In Game View --> 
+						  <img src="assets/ITOM/inGame.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">View in game</p>
+						  </div>
+						</div>
+						<div class="carousel-item"> <!-- Architecture --> 
+						  <img src="assets/ITOM/architecture.png" class="card-img-top" alt="...">
+						  <div class="row justify-content-center" align="center">
+							<p class="text-secondary">The application architecture</p>
+						  </div>
+						</div>
+					  </div>
+					  <a class="carousel-control-prev" href="#itomCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#itomCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					  </a>
+					</div>
+				
+				</div>
+				<hr>	
+				<div class="container ml-5">  <!-- Memory Manager -->
+					<h2>Memory Manager</h2>
+					<p>
+						More description coming soon, example code below for HeapManager.cpp. Supports byte alignment.
+					</p>
+					<br><button id="memorymanagerreveal" class="btn btn-info" data-toggle="collapse" data-target="memorymanagercode">Toggle Code</button>
+					<div id="memorymanagercode" class="collapse">
+					<pre><code class="language-cpp">
+#include &ltWindows.h&gt
+
+#include "HeapManager.h"
+#include &ltcassert&gt
+#include &ltstdio.h&gt
+#include &ltmemoryapi.h&gt
+
+bool IsPowerOfTwo(unsigned int x)
+{
+	return (x & (x - 1)) == 0;
+}
+
+inline unsigned int AlignUp(unsigned int i_value, unsigned int i_align)
+{
+	assert(i_align);
+	assert(IsPowerOfTwo(i_align));
+	return (i_value + (i_align - 1)) & ~(i_align - 1);
+}
+
+inline unsigned int AlignDown(unsigned int i_value, unsigned int i_align)
+{
+	assert(i_align);
+	assert(IsPowerOfTwo(i_align));
+	return i_value & ~(i_align - 1);
+}
+
+
+
+HeapManager::HeapManager(void* i_memStart, const size_t i_maxSize, const unsigned int i_numDescriptors) {
+	unsigned int overhead = sizeof(HeapManager) + (sizeof(Descriptor) * i_numDescriptors);
+
+	m_numDescriptors = i_numDescriptors;
+	m_memStart = i_memStart;
+
+	// Starting at beginning of total block (i_memStart), write descriptors. They are accounted for in overhead.
+	m_unusedBlocks = reinterpret_cast&ltDescriptor*&gt(reinterpret_cast&ltchar*&gt(i_memStart) + sizeof(HeapManager));
+	Descriptor* d = m_unusedBlocks;
+	for (unsigned int i = 0; i &lt i_numDescriptors; i++) {
+		d-&gtstartAddr = nullptr;
+		d-&gtsize = 0;
+		d-&gtnext = d + 1;
+		d++;
+	}
+	(d - 1)-&gtnext = nullptr; // Set the last item's next to null
+
+	m_maxSize = i_maxSize - overhead;
+	m_outstandingAllocList = nullptr;
+	m_freeList = getUnusedBlock();
+	m_freeList-&gtstartAddr = reinterpret_cast&ltchar*&gt(i_memStart) + overhead;
+	m_freeList-&gtsize = m_maxSize;
+	m_freeList-&gtnext = nullptr;
+}
+
+HeapManager* HeapManager::CreateHeapManager(void* i_memStart, const size_t i_maxSize, const unsigned int i_numDescriptors) {
+	assert(i_memStart != nullptr && i_maxSize &gt 0 && i_numDescriptors &gt 0);
+
+	HeapManager* manager = reinterpret_cast&ltHeapManager*&gt(i_memStart);
+
+	return new (manager) HeapManager(i_memStart, i_maxSize, i_numDescriptors);
+}
+
+size_t HeapManager::GetLargestFreeBlock() {
+	assert(m_freeList != nullptr);
+	Descriptor* d = m_freeList;
+
+	size_t maxSize = d-&gtsize;
+	while (d != nullptr) {
+		maxSize = (d-&gtsize &gt maxSize) ? d-&gtsize : maxSize;
+		d = d-&gtnext;
+	}
+
+	return maxSize;
+}
+
+void* HeapManager::alloc(size_t i_size) {
+	Descriptor* d = getFirstFreeBlock(i_size, 1);
+
+	// There is either not enough space or not enough blocks.
+	if (d == nullptr)
+		return nullptr;
+
+	// Add to outstanding allocations
+	d-&gtnext = m_outstandingAllocList;
+	m_outstandingAllocList = d;
+
+	return d-&gtstartAddr;
+}
+
+
+void* HeapManager::alloc(size_t i_size, int i_alignment) {
+	Descriptor* d = getFirstFreeBlock(i_size, i_alignment);
+
+	// There is either not enough space or not enough blocks.
+	if (d == nullptr)
+		return nullptr;
+
+	// Add to outstanding allocations
+	d-&gtnext = m_outstandingAllocList;
+	m_outstandingAllocList = d;
+
+	return d-&gtstartAddr;
+}
+
+
+bool HeapManager::free(void* i_addr) {
+	// Nothing allocated.
+	if (m_outstandingAllocList == nullptr)
+		return false;
+
+	// Check if it is first
+	if (m_outstandingAllocList-&gtstartAddr == i_addr) {
+		Descriptor* desc = m_outstandingAllocList;
+		// remove from outstanding allocations
+		m_outstandingAllocList = desc-&gtnext;
+
+		// add into free list
+		InsertToFreeList(desc);
+		return true;
+	}
+
+	// Get the related descriptor
+	Descriptor* prev = m_outstandingAllocList;
+	Descriptor* cur = prev-&gtnext;
+	while (cur != nullptr) {
+		if (cur-&gtstartAddr == i_addr) {
+			// Remove from outstanding allocations
+			prev-&gtnext = cur-&gtnext;
+
+			// Add into free list
+			InsertToFreeList(cur);
+
+			return true;
+		}
+
+		prev = cur;
+		cur = prev-&gtnext;
+	}
+	
+	// Not allocated address
+	return false;
+}
+
+bool HeapManager::Contains(void* i_addr) {
+	if (m_outstandingAllocList == nullptr)
+		return false;
+
+	Descriptor* d = m_outstandingAllocList;
+
+	while (d != nullptr) {
+		if (i_addr &gt= d-&gtstartAddr && i_addr &lt= reinterpret_cast&ltchar*&gt(d-&gtstartAddr) + d-&gtsize) {
+			return true;
+		}
+
+		d = d-&gtnext;
+	}
+
+	return false;
+}
+
+bool HeapManager::IsAllocated(void* i_addr) {
+	if (m_outstandingAllocList == nullptr)
+		return false;
+
+	Descriptor* d = m_outstandingAllocList;
+
+	while (d != nullptr) {
+		if (d-&gtstartAddr == i_addr) {
+			return true;
+		}
+
+		d = d-&gtnext;
+	}
+
+	return false;
+}
+
+/*
+	Garbage collect - coalesce adjacent blocks
+*/
+void HeapManager::Collect() {
+	// There is nothing to combine if there is none or only one block.
+	if (m_freeList == nullptr)
+		return;
+	if (m_freeList-&gtnext == nullptr)
+		return;
+
+	bool madeChange = true;
+	while (madeChange) {
+		madeChange = false;
+
+		Descriptor* prev = m_freeList;
+		Descriptor* cur = prev-&gtnext;
+
+		while (cur != nullptr) {
+			char* endPoint = reinterpret_cast&ltchar*&gt(prev-&gtstartAddr) + prev-&gtsize;
+			char* curStartPoint = reinterpret_cast&ltchar*&gt(cur-&gtstartAddr);
+
+			// If they are one off, then they're adjacent
+			if (endPoint == curStartPoint) {
+				// nom nom nom
+				prev-&gtsize += cur-&gtsize;
+				cur-&gtsize = 0;
+				prev-&gtnext = cur-&gtnext;
+
+				// Add cur to unused blocks
+				cur-&gtnext = m_unusedBlocks;
+				m_unusedBlocks = cur;
+
+				// Move cur because now it's in unused blocks
+				cur = prev;
+				madeChange = true;
+			}
+
+			// Move to the next set
+			prev = cur;
+			cur = cur-&gtnext;
+		}
+	}
+}
+
+
+/*
+	Gets the first free block that fits the given size. Removes the descriptor from free list and adds
+	a new one for the remaining size. 
+*/
+Descriptor* HeapManager::getFirstFreeBlock(size_t i_size, int i_alignment) {
+	// There is no free blocks
+	if (m_freeList == nullptr)
+		return nullptr;
+
+	// If the first is large enough, allocate it (account for potentially required alignment)
+	if (m_freeList-&gtsize &gt i_size + i_alignment) {
+		Descriptor* desc = m_freeList;
+
+		// Get an unused block, put it at the start of freeList
+		m_freeList = getUnusedBlock();
+		
+		//if getUnusedBlock returns nullptr, revert
+		if (m_freeList == nullptr) {
+			m_freeList = desc;
+			return nullptr;
+		}
+
+		m_freeList-&gtstartAddr = desc-&gtstartAddr;
+		m_freeList-&gtnext = desc-&gtnext;
+
+		// Move from back to front to allocate space
+		char* unalignedAddr = reinterpret_cast&ltchar*&gt(desc-&gtstartAddr) + desc-&gtsize - i_size;
+		unsigned int movedAddr = AlignDown(reinterpret_cast&ltunsigned int&gt(unalignedAddr), i_alignment);
+		desc-&gtstartAddr = reinterpret_cast&ltvoid*&gt(movedAddr);
+
+		// Account for the newly aligned sizes
+		m_freeList-&gtsize = reinterpret_cast&ltchar*&gt(desc-&gtstartAddr) - reinterpret_cast&ltchar*&gt(m_freeList-&gtstartAddr);
+		desc-&gtsize = i_size + reinterpret_cast&ltunsigned int&gt(unalignedAddr) - movedAddr;
+
+		return desc;
+	}
+
+	Descriptor* prev = m_freeList;
+	Descriptor* cur = prev-&gtnext;
+	while (cur != nullptr) {
+		if (cur-&gtsize &gt i_size + i_alignment) {
+			// Set up a replacement for the remaining size, set up pointers accordingly
+			Descriptor* replacement = getUnusedBlock();
+
+			// If getUnusedBlock returns nullptr, bail
+			if (replacement == nullptr)
+				return nullptr;
+
+			replacement-&gtstartAddr = cur-&gtstartAddr;
+			replacement-&gtnext = cur-&gtnext;
+
+			// Move from back to front to allocate space
+			char* unalignedAddr = reinterpret_cast&ltchar*&gt(cur-&gtstartAddr) + cur-&gtsize - i_size;
+			unsigned int movedAddr = AlignDown(reinterpret_cast&ltunsigned int&gt(unalignedAddr), i_alignment);
+			cur-&gtstartAddr = reinterpret_cast&ltvoid*&gt(movedAddr);
+
+			prev-&gtnext = replacement;
+
+			// Update size and return
+			cur-&gtsize = i_size + reinterpret_cast&ltunsigned int&gt(unalignedAddr) - movedAddr;
+			replacement-&gtsize = reinterpret_cast&ltchar*&gt(cur-&gtstartAddr) - reinterpret_cast&ltchar*&gt(replacement-&gtstartAddr);
+			return cur;
+		}
+
+		prev = cur;
+		cur = prev-&gtnext;
+	}
+
+	// None of size
+	return nullptr;
+}
+
+Descriptor* HeapManager::getUnusedBlock() {
+	if (m_unusedBlocks == nullptr)
+		return nullptr;
+
+	Descriptor* o_desc = m_unusedBlocks;
+	m_unusedBlocks = o_desc-&gtnext;
+
+	return o_desc;
+}
+
+
+void HeapManager::ShowOutstandingAllocations() {
+	Descriptor* d = m_outstandingAllocList;
+
+	printf("Allocated List:\n");
+	while (d != nullptr) {
+		printf("\t selfAddr: %p \t startAddr: %p \t size:%d \t next: %p\n", d, d-&gtstartAddr, d-&gtsize, d-&gtnext);
+		d = d-&gtnext;
+	}
+}
+
+void HeapManager::ShowFreeBlocks() {
+	Descriptor* d = m_freeList;
+
+	printf("Free List:\n");
+	while (d != nullptr) {
+ 		printf("\t selfAddr: %p \t startAddr: %p \t size:%d \t next: %p\n", d, d-&gtstartAddr, d-&gtsize, d-&gtnext);
+		d = d-&gtnext;
+	}
+}
+
+void HeapManager::InsertToFreeList(Descriptor* i_desc) {
+	// Check if it is the first item
+	if (m_freeList == nullptr || m_freeList-&gtstartAddr &gt i_desc-&gtstartAddr) {
+		// push onto front
+		i_desc-&gtnext = m_freeList;
+		m_freeList = i_desc;
+
+		return;
+	}
+	
+	// Otherwise, iterate list and place in sorted order
+	Descriptor* prev = m_freeList;
+	Descriptor* cur = prev-&gtnext;
+	while (cur != nullptr) {
+		if (prev-&gtstartAddr &lt i_desc-&gtstartAddr && cur-&gtstartAddr &gt i_desc-&gtstartAddr) {
+			// Place in between
+			prev-&gtnext = i_desc;
+			i_desc-&gtnext = cur;
+
+			return;
+		}
+
+		prev = cur;
+		cur = prev-&gtnext;
+	}
+	
+	// Finally, if it was never placed, put it at the end
+	prev-&gtnext = i_desc;
+	i_desc-&gtnext = nullptr;
+}
+
+
+void HeapManager::Destroy() {
+	VirtualFree(m_memStart, 0, MEM_RELEASE);
+}
+					</code></pre>
+					</div>
+				</div>
 			
-			</div>
 		</div>
 	</div>
   
@@ -357,6 +1007,9 @@
 	<!-- Table of Contents -->
 	<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
 	
+	<!-- Syntax Highlighter -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  
 	<script>
 		$('.hoverenlarge').hover(function(){
 			$(this).toggleClass("enlarged");
@@ -372,6 +1025,16 @@
 			target: navSelector,
 		  });
 		});
+		
+		$('#spereveal').click(function() {
+			$('#specode').collapse("toggle");		
+		});
+		
+		$('#memorymanagerreveal').click(function() {
+			$('#memorymanagercode').collapse("toggle");
+		});
+		
+		hljs.highlightAll();
 	</script>
   </body>
 </html>
